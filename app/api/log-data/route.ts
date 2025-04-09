@@ -1,9 +1,13 @@
 import { type NextRequest, NextResponse } from 'next/server'
 
-export async function POST(params: NextRequest) {
-  const response = (await params.json()) as { data: string }
+export interface LogDataRequest {
+  data: string
+}
 
-  console.log(response.data)
+export async function POST(params: NextRequest) {
+  const response = (await params.json()) as LogDataRequest
+
+  console.log(response)
 
   return NextResponse.json({ success: true })
 }
