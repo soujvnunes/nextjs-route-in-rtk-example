@@ -1,3 +1,5 @@
+import { NextResponse } from 'next/server'
+
 export interface ResultResponse {
   string: string[]
 }
@@ -10,6 +12,7 @@ export async function GET() {
       'Content-Type': 'application/json',
     },
   })
+  const result: ResultResponse = await response.json()
 
-  return (await response.json()) as ResultResponse
+  return NextResponse.json(result)
 }
