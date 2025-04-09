@@ -1,38 +1,38 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface State {
-  firstName: string
-  randomNumber: number
-  rawDate: EpochTimeStamp
+  name: string
+  number: string
+  date: string
 }
 
 const initialState: State = {
-  firstName: '',
-  randomNumber: 0,
-  rawDate: 0,
+  name: '',
+  number: '',
+  date: '',
 }
 
 const state = createSlice({
   name: 'state',
   initialState,
   reducers: {
-    addFirstName: (state, action: PayloadAction<string>) => ({
+    addName: (state, action: PayloadAction<string>) => ({
       ...state,
-      firstName: action.payload,
+      name: action.payload,
     }),
-    addRandomNumber: (state, action: PayloadAction<number>) => ({
+    addNumber: (state, action: PayloadAction<string>) => ({
       ...state,
-      randomNumber: action.payload,
+      number: action.payload,
     }),
-    addRawDate: (state, action: PayloadAction<number>) => ({
+    addDate: (state, action: PayloadAction<string>) => ({
       ...state,
-      rawDate: action.payload,
+      date: action.payload,
     }),
   },
   selectors: {
-    firstName: (state) => state.firstName,
-    randomNumber: (state) => state.randomNumber,
-    rawDate: (state) => state.rawDate,
+    name: (state) => state.name,
+    number: (state) => state.number,
+    date: (state) => state.date,
   },
 })
 
