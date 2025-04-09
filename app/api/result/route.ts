@@ -1,3 +1,7 @@
+export interface ResultResponse {
+  string: string[]
+}
+
 export async function GET() {
   const response = await fetch('https://qrandom.io/api/random/string', {
     headers: {
@@ -5,5 +9,5 @@ export async function GET() {
     },
   })
 
-  return (await response.json()) as string[]
+  return (await response.json()) as ResultResponse
 }
