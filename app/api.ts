@@ -5,7 +5,7 @@ import { type LogDataRequest } from './api/log-data/route'
 const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: '/api' }),
   endpoints: (build) => ({
-    getLogData: build.mutation<void, LogDataRequest>({
+    logData: build.mutation<void, LogDataRequest>({
       query: (body) => ({
         url: '/log-data',
         method: 'POST',
