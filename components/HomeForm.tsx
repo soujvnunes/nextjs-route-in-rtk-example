@@ -9,7 +9,7 @@ import { redirect } from 'next/navigation'
 
 export default function HomeForm() {
   const dispatch = useDispatch()
-  const [logData] = api.endpoints.logData.useMutation()
+  const [logData, result] = api.endpoints.logData.useMutation()
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -32,10 +32,14 @@ export default function HomeForm() {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        name={fields.name}
         placeholder="First name"
+        name={fields.name}
       />
-      <Button htmlType="submit">Next</Button>
+      <Button
+        htmlType="submit"
+        loading={result.isLoading}>
+        Next
+      </Button>
     </form>
   )
 }
