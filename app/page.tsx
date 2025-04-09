@@ -1,6 +1,6 @@
 import Layout, { Content, Header } from 'antd/es/layout/layout'
 import Title from 'antd/es/typography/Title'
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import HomeForm from '@/components/HomeForm'
 
 export default function Home() {
